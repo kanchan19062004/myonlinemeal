@@ -1,5 +1,9 @@
 # MyOnlineMeal
 
+**Live demo: [myonlinemeal-xwap.onrender.com](https://myonlinemeal-xwap.onrender.com)**
+
+> Hosted on Render's free plan, so the first visit after a period of inactivity can take 30–60 seconds to load.
+
 A 100% vegetarian online food ordering website: browse the menu, add dishes to a cart, log in and place orders. Contact messages, users, food items and orders are stored in PostgreSQL.
 
 ## Tech
