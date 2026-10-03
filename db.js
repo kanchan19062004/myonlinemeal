@@ -5,11 +5,16 @@ if (!process.env.DATABASE_URL) {
   process.exit(1);
 }
 
-const isLocal = /@(localhost|127\.0\.0\.1)[:/]/.test(process.env.DATABASE_URL);
+const dbUrl = new URL(process.env.DATABASE_URL);
+const isLocal = ['localhost', '127.0.0.1'].includes(dbUrl.hostname);
+
+// SSL is configured here rather than via ?sslmode= in the URL, which makes `pg` print a deprecation warning.
+dbUrl.searchParams.delete('sslmode');
+dbUrl.searchParams.delete('channel_binding');
 
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: isLocal ? false : { rejectUnauthorized: false },
+  connectionString: dbUrl.toString(),
+  ssl: isLocal ? false : { rejectUnauthorized: true },
 });
 
 const SCHEMA = `
