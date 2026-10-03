@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Menu | MyOnlineMeal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="menu">
+
+  <section class="page-banner">
+    <div class="container">
+      <h1>Explore Our Menu</h1>
+      <p>100% pure vegetarian, freshly cooked and full of flavour. Pick your favourites and add them to your cart.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="menu-toolbar">
+        <input type="search" class="search-box" id="search" placeholder="Search dishes..." aria-label="Search dishes">
+        <div class="chips" id="category-chips"></div>
+      </div>
+      <div class="food-grid" id="food-grid">
+        <p class="state-msg">Loading menu...</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cart-bar" id="cart-bar">
+    <span id="cart-bar-text"></span>
+    <a href="cart.html" class="btn btn-primary">View Cart &rarr;</a>
+  </div>
+
+  <script src="js/common.js"></script>
+  <script src="js/menu.js"></script>
+</body>
+</html>
